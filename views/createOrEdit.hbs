@@ -1,0 +1,30 @@
+<div class="w-100">
+    {{#if data.id}}
+    <form>
+        <div class="row">
+            <p class="col-12 text-center fw-b h3 bg-secondary mb-3 text-light p-1">Id: {{data.id}}</p>
+            <label for="title" class="col-3 text-center fw-b h3">Title:</label>
+            <input type="text" id="title" name="title" placeholder="Input title" class="col-8 form-control"
+                value="{{data.title}}">
+            <label for="content" class="col-3 text-center fw-b h3 mt-3">Content:</label>
+            <input type="text" id="content" name="content" placeholder="Input content" class="col-8 form-control mt-3"
+                value="{{data.content}}">
+        </div>
+        <div class="text-center mt-5">
+            <input type="submit" class="btn btn-primary btn-lg" value="Edit Blog">
+        </div>
+    </form>
+    {{else}}
+    <form>
+        <div class="row">
+            <label for="title" class="col-3 text-center fw-b h3">Title:</label>
+            <input type="text" id="title" name="title" placeholder="Input title" class="col-8 form-control">
+            <label for="content" class="col-3 text-center fw-b h3 mt-3">Content:</label>
+            <input type="text" id="content" name="content" placeholder="Input content" class="col-8 form-control mt-3">
+        </div>
+        <div class="text-center mt-5">
+            <input type="submit" class="btn btn-primary btn-lg" value="Add Blog">
+        </div>
+    </form>
+    {{/if}}
+</div>

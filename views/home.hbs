@@ -1,0 +1,37 @@
+<div class="w-100">
+    {{#if blogs.blogs}}
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Content</th>
+                    <th class="text-center">Action</th>
+                </tr>
+            </thead>
+            {{#each blogs.blogs}}
+            <tbody>
+                <tr>
+                    <td><a href="/blog/{{id}}">{{title}}</a></td>
+                    <td>{{content}}</td>
+                    <td class="text-center"><a href="/blog/{{id}}/edit">Edit</a> | <a
+                            href="/blog/{{id}}/delete">Delete</a></td>
+                </tr>
+            </tbody>
+            {{/each}}
+        </table>
+    </div>
+    <div class="text-center mt-5">
+        <a href="/blog/create">
+            <button type="button" class="btn btn-primary btn-lg">Add New Blog</button>
+        </a>
+    </div>
+    {{else}}
+    <div class="text-center text-danger fw-b h1"> Chưa có blog </div>
+    <div class="text-center mt-5">
+        <a href="/blog/create">
+            <button type="button" class="btn btn-primary btn-lg">Add New Blog</button>
+        </a>
+    </div>
+    {{/if}}
+</div>
