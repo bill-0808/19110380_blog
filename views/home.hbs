@@ -14,8 +14,11 @@
                 <tr>
                     <td><a href="/blog/{{id}}">{{title}}</a></td>
                     <td>{{content}}</td>
-                    <td class="text-center"><a href="/blog/{{id}}/edit">Edit</a> | <a
-                            href="/blog/{{id}}/delete">Delete</a></td>
+                    <form action="/blog/{{id}}/delete?_method=DELETE" method="post" id="delete-form">
+                    </form>
+                    <td class="text-center"><a href="/blog/{{id}}/edit">Edit</a> | <a href=""
+                            onclick="deleteClick()">Delete</a>
+                    </td>
                 </tr>
             </tbody>
             {{/each}}
@@ -35,3 +38,14 @@
     </div>
     {{/if}}
 </div>
+
+<script>
+    function deleteClick() {
+        event.preventDefault();
+        if (confirm('Are You Sure?')) {
+            document.getElementById('delete-form').submit()
+        } else {
+            alert("Delete canceled.")
+        }
+    }
+</script>
